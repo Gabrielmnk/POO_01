@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>Exercício 1.1</h1>
+<ul>
+    <li>Crie uma classe que defina frutas de qualquer tipo;</li>
+    <li>Crie os atributos comuns para todas as frutas deste tipo;</li>
+    <li>Os atributos devem ser privados;</li>
+    <li>Crie 'getters' e 'setters' para todos os atributos que você definir;</li>
+    <li>Crie pelo menos 2 objetos instanciando a classe;</li>
+    <li>Defina os atributos do novo objeto usando os 'setters';</li>
+    <li>Exiba o objeto no console do JavaScript;</li>
+    <li>Exiba pelo menos dois atributos no documento, usando os 'getters'.</li>
+</ul>
+
+<body>
+
+    <script>
+        // Cria a classe
+        class Frutas {
+
+            // Atributos
+            #nome;
+            #massa;
+            #cor
+
+            // Métodos 'set'
+            setNome(nome) {
+
+                // Remove espaços antes e depois de 'nome'
+                nome = nome.trim();
+
+                // Atribui 'nome' ao atributo '#nome'
+                this.#nome = nome;
+            }
+
+            setMassa(massa) {
+                this.#massa = massa.trim();
+            }
+
+            setCor(cor) {
+                this.#cor = cor.trim();
+            }
+
+            // Atributos 'get'
+            getNome() {
+                return this.#nome;
+            }
+
+            getMassa() {
+                return this.#massa;
+            }
+
+            getCor() {
+                return this.#cor;
+            }
+
+        }
+
+        // Instância da classe
+        var abacaxi = new Frutas();
+        var morango = new Frutas();
+
+        // Define atributos dos objetos
+        abacaxi.setNome('Abacaxi');
+        abacaxi.setMassa('700g');
+        abacaxi.setCor('amarelo');
+
+        morango.setNome('Morango');
+        morango.setMassa('10g');
+        morango.setCor('vermelho')
+
+
+        // Exibe o objeto interio
+        console.log(abacaxi);
+
+        // Exibe no documento
+        document.write(`
+            <p>A fruta ${abacaxi.getNome()} tem ${abacaxi.getMassa()} de massa e a cor ${abacaxi.getCor()}. </p>
+            <p>A fruta ${morango.getNome()} tem ${morango.getMassa()} de massa e a cor ${morango.getCor()}. </p>
+
+        `);
+
+    </script>
+
+</body>
+
+</html>
