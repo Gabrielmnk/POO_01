@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: monospace;
+        }
+    </style>
+    <title>Exercício 2.1</title>
+</head>
+
+<body>
+
+    <h1>Exercício 2.1</h1>
+    Crie as classes necessárias:
+    <ul>
+        <li>A classe "Serie" define os atributos, getters e setters comuns para todas as séries;</li>
+        <li>O atributo "titulo" deve ser inserido na instância da classe (construtor);</li>
+        <li>A classe "Comédia" define atributos, getters e setters comuns para esse tipo de série, herdando a classe
+            "Serie";</li>
+        <li>A classe "Suspense" define atributos, getters e setters comuns para esse tipo de série, herdando a classe
+            "Serie";</li>
+        <li>A classe "SyFy" define atributos, getters e setters comuns para esse tipo de série, herdando a classe
+            "Serie";</li>
+        <li>Crie um objeto para cada tipo de classe "filha" para testar.</li>
+    </ul>
+
+</body>
+
+<script>
+
+
+    class Serie {
+
+        #titulo
+        #elenco;
+        #premios;
+        #classificacao;
+        #tempo;
+
+        constructor(titulo) {
+            this.setTitulo(titulo)
+
+        }
+
+        setElenco(elenco) { this.#elenco = elenco }
+        setPremios(premios) { this.#premios = premios }
+        setClassificacao(classificacao) { this.#classificacao = classificacao }
+        setTempo(tempo) { this.#tempo = tempo }
+        setTitulo(titulo) { this.#titulo = titulo }
+
+
+
+        getTitulo() { return this.#titulo }
+        getTempo() { return this.#tempo }
+        getElenco() { return this.#elenco }
+        getPremios() { return this.#premios }
+        getClassificacao() { return this.#classificacao }
+
+
+    }
+
+    class Comedia extends Serie {
+
+        constructor(titulo, classificacao, tempo) {
+            super(titulo)
+
+        }
+
+
+
+    }
+
+    class Suspense extends Serie {
+
+
+
+        constructor(titulo, elenco, premios) {
+            super(titulo)
+
+        }
+
+
+    }
+
+
+
+</script>
+
+
+
+
+</html>
