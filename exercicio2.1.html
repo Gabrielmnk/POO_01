@@ -37,55 +37,60 @@
 
         #titulo
         #elenco;
-        #premios;
-        #classificacao;
-        #tempo;
+
 
         constructor(titulo) {
             this.setTitulo(titulo)
-
         }
 
         setElenco(elenco) { this.#elenco = elenco }
-        setPremios(premios) { this.#premios = premios }
-        setClassificacao(classificacao) { this.#classificacao = classificacao }
-        setTempo(tempo) { this.#tempo = tempo }
         setTitulo(titulo) { this.#titulo = titulo }
 
-
-
         getTitulo() { return this.#titulo }
-        getTempo() { return this.#tempo }
         getElenco() { return this.#elenco }
-        getPremios() { return this.#premios }
-        getClassificacao() { return this.#classificacao }
 
 
     }
 
     class Comedia extends Serie {
 
-        constructor(titulo, classificacao, tempo) {
+        #tempo
+        #risadas
+
+        constructor(titulo) {
             super(titulo)
 
         }
 
+        setTempo(tempo) { this.#tempo = tempo }
+        setRisadas(risadas) { this.#risadas = risadas }
 
+        getTempo() { return this.#tempo }
+        getRisadas() { return this.#risadas }
 
     }
 
     class Suspense extends Serie {
 
+        #duracao
+        #sustos
 
-
-        constructor(titulo, elenco, premios) {
+        constructor(titulo) {
             super(titulo)
 
         }
 
+        setDuracao(duracao) { this.#duracao = duracao }
+        setSustos(sustos) { this.#sustos = sustos }
 
+        getDuracao() { return this.#duracao }
+        getSustos() { return this.#sustos }
     }
 
+    let farofa = new Comedia('Farofa')
+    farofa.setTempo('200m')
+    farofa.setElenco("Pedro, João, Maria")
+    console.log(farofa)
 
 
 </script>
